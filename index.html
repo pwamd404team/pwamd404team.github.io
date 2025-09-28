@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es" class="light dark">
+
+<head>
+
+ <meta charset="UTF-8">
+ <title>PWA con MD - 404Team</title>
+
+ <!-- Resumen para los motores de búsqueda. -->
+ <meta name="description" content="PWAMD - 404Team">
+
+ <script src="js/registraServiceWorker.js"></script>
+
+ <meta name="viewport" content="width=device-width">
+
+ <!-- Color de la barra de navegación de Chrome en dispositivos móviles. -->
+ <meta name="theme-color" content="#2d2e00">
+
+ <!-- Ícono para la página web, que normalmente se pone en la raíz del sitio.
+  Puede ser diferente para cada página. -->
+ <link rel="icon" sizes="32x32" href="favicon.ico">
+
+ <!-- Configuración de la PWA para Chrome, Edge y Safari.
+  Debe ponerse en todas las páginas. -->
+ <link rel="manifest" href="site.webmanifest">
+
+ <!-- Permite a los navegadores, que como Safari no soportan el estándar
+  completo de custom elementsm, lo cumplan totalmente. Debe ponerse en todas
+  las páginas. -->
+ <script src="ungap/custom-elements.js"></script>
+
+ <!-- Configuración de todas las páginas con JavaSript. -->
+ <script type="module" src="js/configura.js"></script>
+ <link rel="stylesheet" href="css/estilos.css">
+ <link rel="stylesheet" href="css/transicion_completa.css">
+
+</head>
+
+<body>
+
+ <md-top-app-bar class="center-aligned">
+
+  <h1>PWA con MD - 404Team</h1>
+
+  <button is="md-menu-button" slot="navigation"></button>
+
+  <button type="button" class="md-standard-icon-button avatar" title="Perfil"
+    slot="action">
+   <span class="material-symbols-outlined">account_circle</span>
+  </button>
+
+ </md-top-app-bar>
+
+ <main>
+    <ul class="lista-nombres">
+      <li>Elías López Leonardo</li>
+      <li>Espinosa Pérez Gerardo Yahir</li>
+      <li>Flores Hernández Sergio</li>
+      <li>Hernández Hernández Raúl</li>
+      <li>Martínez Salinas Gabriela Edith</li>
+      <li>Paredes Nieto Karen de Jesús</li>
+      <li>Rojas Pérez Melisa</li>
+      <li>Solis Morales Jorge Aarón</li>
+   </ul>
+ </main>
+
+ <nav-drw></nav-drw>
+
+</body>
+
+</html>

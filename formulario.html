@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es" class="light dark">
+
+<head>
+
+ <meta charset="UTF-8">
+ <title>Formulario - PWA con MD - 404Team</title>
+
+ <script src="js/registraServiceWorker.js"></script>
+
+ <meta name="viewport" content="width=device-width">
+ <meta name="theme-color" content="#2d2e00">
+ <link rel="icon" sizes="32x32" href="favicon.ico">
+ <link rel="manifest" href="site.webmanifest">
+ <script src="ungap/custom-elements.js"></script>
+
+ <script type="module" src="js/configura.js"></script>
+ <link rel="stylesheet" href="css/estilos.css">
+ <link rel="stylesheet" href="css/transicion_completa.css">
+
+</head>
+
+<body>
+
+ <form id="form" novalidate onsubmit="procesa(event)">
+
+  <md-top-app-bar>
+
+   <h1>Formulario</h1>
+
+   <button is="md-menu-button" slot="navigation"></button>
+
+  </md-top-app-bar>
+
+  <main>
+
+   <p>
+    <span class="md-filled-text-field" accesskey="G">
+     <md-select-menu id="selectGenero" required options="opcionesDeGenero"
+       oninput="copiaMensajes()"></md-select-menu>
+     <span>Nombres</span>
+     <small id="supportingGenero">Obligatorio</small>
+    </span>
+   </p>
+
+   <p>
+    <button class="md-filled-button" style="width: 100%;">Recomendar</button>
+   </p>
+
+  </main>
+
+  <md-options-menu id="opcionesDeGenero" aria-label="Opciones de género">
+   <span data-value="" title="Selecciona género"></span>
+   <span data-value="eli">Elias López Leonardo</span>
+   <span data-value="ger">Espinosa Pérez Gerardo Yahir</span>
+   <span data-value="ser">Flores Hernández Sergio</span>
+   <span data-value="rau">Hernández Hernández Raúl</span>
+   <span data-value="gab">Martínez Salinas Gabriela Edith</span>
+   <span data-value="kar">Paredes Nieto Karen de Jesús</span>
+   <span data-value="mel">Rojas Pérez Melisa</span>
+   <span data-value="aro">Solis Morales Jorge Aarón</span>
+  </md-options-menu>
+
+  <nav-drw></nav-drw>
+
+ </form>
+
+ <script type="module">
+  import { muestraTextoDeAyuda } from "./lib/js/muestraTextoDeAyuda.js"
+  import { exportaAHtml } from "./lib/js/exportaAHtml.js"
+  import { muestraError } from "./lib/js/muestraError.js"
+
+  function copiaMensajes() {
+   muestraTextoDeAyuda(selectGenero, supportingGenero, "Obligatorio")
+  }
+  exportaAHtml(copiaMensajes)
+
+  /**
+   * @param {SubmitEvent} evt
+   */
+  function procesa(evt) {
+   evt.preventDefault()
+   try {
+    copiaMensajes()
+    if (
+     selectGenero.validity.valid) {
+     const genero = selectGenero.value
+     const resultado = recomienda(genero)
+     alert(resultado)
+    }
+   } catch (e) {
+    muestraError(e)
+   }
+  }
+  exportaAHtml(procesa)
+
+  /** @param {string} genero */
+  function recomienda(genero) {
+   switch (genero) {
+  case "eli":
+    return "Me encantan los mensajes de voz.\nYo los detesto.\nSí, esos también estan chidos."
+  case "ger":
+    return "¿Qué hace un mudo bailando? Una mudanza."
+  case "ser":
+    return "¿Qué le dice una impresora a otra? Esta hoja es tuya o es impresión mía."
+  case "rau":
+    return "Buenas, quería una camiseta de un personaje inspirador.\n¿Ghandi?.\nNo, mediani."
+  case "gab":
+    return "¿Sabes por qué no se puede discutir con un DJ? Porque siempre están cambiando de tema."
+  case "kar":
+    return "¿Qué hace una cebolla en una cita? Llora de emoción."
+  case "mel":
+    return "¿Por qué los planetas no van a los conciertos? ¡Porque necesitan más espacio!"  
+  case "aro":
+    return "Mamá, mamá... ¿Por qué en la escuela me dicen fin de semana?\nYa cállate Domingo"
+  default:
+    return "Invalido"      
+  }  
+  }
+  
+ </script>
+
+</body>
+
+</html>
