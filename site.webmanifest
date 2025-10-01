@@ -13,14 +13,14 @@
  "screenshots": [
   {
    "src": "/img/screenshot_horizontal.png",
-   "sizes": "1257x646",
+   "sizes": "1853x907",
    "type": "image/png",
    "form_factor": "wide",
    "label": "PWA con Material Design"
   },
   {
    "src": "/img/screenshot_vertical.png",
-   "sizes": "595x644",
+   "sizes": "747x1280",
    "type": "image/png",
    "form_factor": "narrow",
    "label": "PWA con Material Design (2)"
@@ -71,7 +71,7 @@
   },
   {
    "src": "/img/maskable_icon.png",
-   "sizes": "3413x3413",
+   "sizes": "2560x2560",
    "type": "image/png",
    "purpose": "any"
   },
