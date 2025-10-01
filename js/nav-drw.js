@@ -15,11 +15,6 @@ export class NavDrw extends MdNavigationDrawer {
     Inicio
    </a>
 
-   <a ${resaltaSiEstasEn(["/formulario.html"])} href="formulario.html">
-    <span class="material-symbols-outlined">newspaper</span>
-    Formulario
-   </a>
-
    <a ${resaltaSiEstasEn(["/ayuda.html"])} href="ayuda.html">
     <span class="material-symbols-outlined">help</span>
     Ayuda
@@ -27,5 +22,6 @@ export class NavDrw extends MdNavigationDrawer {
  }
 
 }
+
 
 customElements.define("nav-drw", NavDrw)
